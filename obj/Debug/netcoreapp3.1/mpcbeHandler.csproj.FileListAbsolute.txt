@@ -1,0 +1,13 @@
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.csprojAssemblyReference.cache
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.AssemblyInfoInputs.cache
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.AssemblyInfo.cs
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.csproj.CoreCompileInputs.cache
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.exe
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.deps.json
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.runtimeconfig.json
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.runtimeconfig.dev.json
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.dll
+C:\mpcbeHandler\bin\Debug\netcoreapp3.1\mpcbeHandler.pdb
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.dll
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.pdb
+C:\mpcbeHandler\obj\Debug\netcoreapp3.1\mpcbeHandler.genruntimeconfig.cache
