@@ -3,10 +3,10 @@ using System.Web;
 
 var videoPath = args[0].Replace("mpcbe://", "");
 var splitedVideoPath = videoPath.Split(':');
-var isPotPlayer = splitedVideoPath.Last() == "PotPlayer";
-videoPath = splitedVideoPath[0];
-var process = $"\"C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe\" \"{videoPath}\"";
-if (isPotPlayer) process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
+var isPotPlayer = splitedVideoPath.Last() == "PP";
+videoPath = splitedVideoPath[0] + ":" + splitedVideoPath[1];
+var process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
+if (isPotPlayer) process = $"\"C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe\" \"{videoPath}\"";
 
 var subtitle = GetSubtitle(videoPath);
 if (subtitle != null) process += $" /sub \"{subtitle}\"";
