@@ -4,9 +4,22 @@ using System.Web;
 var videoPath = args[0].Replace("mpcbe://", "");
 var splitedVideoPath = videoPath.Split(':');
 var isPotPlayer = splitedVideoPath.Last() == "PotPlayer";
+var playerName = splitedVideoPath.Last();
 videoPath = splitedVideoPath[0] + ":" + splitedVideoPath[1];
+
 var process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
-if (isPotPlayer) process = $"\"C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe\" \"{videoPath}\"";
+switch (playerName) {
+    case "":
+    case "MPCBE":
+        process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
+        break;
+    case "PotPlayer":
+        process = $"\"C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe\" \"{videoPath}\"";
+        break;
+    case "MPV":
+        process = $"\"E:\\MPV\\mpvnet.exe\" \"{videoPath}\"";
+        break;
+}
 
 var subtitle = GetSubtitle(videoPath);
 if (subtitle != null) process += $" /sub \"{subtitle}\"";
