@@ -33,7 +33,9 @@ static string GetSubtitle(string path) {
     var allFiles = Directory.GetFileSystemEntries(downloadPath).ToList();
     downloadPath += "\\";
     string result = null;
+    string[] extension = new string[] { ".ass", ".srt", ".ssa" };
     for (int i = 0; i < allFiles.Count(); i++) {
+        if (!extension.Contains(Path.GetExtension(allFiles[i]))) continue;
         allFiles[i] = allFiles[i].Replace(downloadPath, String.Empty);
         if (allFiles[i].StartsWith(fileName)) {
             result = Path.Combine(downloadPath, allFiles[i]);
