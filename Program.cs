@@ -22,7 +22,10 @@ switch (playerName) {
 }
 
 var subtitle = GetSubtitle(videoPath);
-if (subtitle != null) process += $" /sub \"{subtitle}\"";
+if (subtitle != null) {
+    if (playerName == "MPV") process += $" --sub-file=\"{subtitle}\"";
+    else process += $" /sub \"{subtitle}\"";
+}
 
 Process.Start(process);
 
