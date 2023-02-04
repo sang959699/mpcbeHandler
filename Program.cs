@@ -23,11 +23,30 @@ switch (playerName) {
 
 var subtitle = GetSubtitle(videoPath);
 if (subtitle != null) {
-    if (playerName == "MPV") process += $" --sub-file=\"{subtitle}\"";
-    else process += $" /sub \"{subtitle}\"";
+    if (playerName != "MPV") process += $" /sub \"{subtitle}\"";
 }
 
-Process.Start(process);
+var proc = new Process();
+proc.StartInfo = new ProcessStartInfo(process);
+proc.Start();
+
+//Process.Start(process);
+
+if (playerName == "MPV") {
+    proc.WaitForInputIdle();
+
+    var procSubRemove = new Process();
+    procSubRemove.StartInfo = new ProcessStartInfo($"\"E:\\MPV\\mpvnet.exe\" --command=\"sub-remove\"");
+    procSubRemove.Start();
+    procSubRemove.WaitForInputIdle();
+
+    var procSubAdd = new Process();
+    procSubAdd.StartInfo = new ProcessStartInfo($"\"E:\\MPV\\mpvnet.exe\" --command=\"sub-add \\\"{subtitle.Replace("\\", "\\\\")}\\\"\"");
+    procSubAdd.Start();
+
+    //Process.Start($"\"E:\\MPV\\mpvnet.exe\" --command=\"sub-remove\"");
+    //Process.Start($"\"E:\\MPV\\mpvnet.exe\" --command=\"sub-add \\\"{subtitle.Replace("\\", "\\\\")}\\\"\"");
+}
 
 static string GetSubtitle(string path) {
     path = HttpUtility.UrlDecode(path);
