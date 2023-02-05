@@ -32,7 +32,7 @@ proc.Start();
 
 //Process.Start(process);
 
-if (playerName == "MPV") {
+if (playerName == "MPV" && subtitle != null) {
     proc.WaitForInputIdle();
 
     var procSubRemove = new Process();
