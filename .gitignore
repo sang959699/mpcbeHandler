@@ -11,3 +11,5 @@ bin/
 Bin/
 obj/
 Obj/
+/Properties
+/.vs/mpcbeHandler

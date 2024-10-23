@@ -6,6 +6,7 @@ var splitedVideoPath = videoPath.Split(':');
 var isPotPlayer = splitedVideoPath.Last() == "PotPlayer";
 var playerName = splitedVideoPath.Last();
 videoPath = splitedVideoPath[0] + ":" + splitedVideoPath[1];
+videoPath = videoPath.Replace("https//", "https://");
 
 var process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
 switch (playerName) {
