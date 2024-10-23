@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Web;
 
-var videoPath = args[0].Replace("mpcbe://", "");
 args[0] = args[0].Replace("https//", "https://");
+var videoPath = args[0].Replace("mpcbe://", "");
 var splitedVideoPath = videoPath.Split(':');
 var isPotPlayer = splitedVideoPath.Last() == "PotPlayer";
 var playerName = splitedVideoPath.Last();
