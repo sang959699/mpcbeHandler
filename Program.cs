@@ -2,11 +2,11 @@
 using System.Web;
 
 var videoPath = args[0].Replace("mpcbe://", "");
+args[0] = args[0].Replace("https//", "https://");
 var splitedVideoPath = videoPath.Split(':');
 var isPotPlayer = splitedVideoPath.Last() == "PotPlayer";
 var playerName = splitedVideoPath.Last();
 videoPath = splitedVideoPath[0] + ":" + splitedVideoPath[1];
-videoPath = videoPath.Replace("https//", "https://");
 
 var process = $"\"C:\\Program Files\\MPC-BE x64\\mpc-be64.exe\" \"{videoPath}\"";
 switch (playerName) {
